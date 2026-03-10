@@ -609,7 +609,7 @@ export default function DashboardPage() {
                 <div>
                   <div className="text-yellow-400 font-medium text-sm">Horário de pico detectado</div>
                   <p className="text-slate-300 text-sm mt-1">
-                    Das 14h às 17h há alta demanda. Considere adicionar um profissional extra.
+                    Das 14h às 17h há alta demanda de consultas. Considere reforçar o atendimento nesse período.
                   </p>
                 </div>
               </div>
@@ -621,9 +621,9 @@ export default function DashboardPage() {
                   <TrendingUp className="w-3 h-3 text-blue-400" />
                 </div>
                 <div>
-                  <div className="text-blue-400 font-medium text-sm">Oportunidade de upsell</div>
+                  <div className="text-blue-400 font-medium text-sm">Oportunidade de retorno</div>
                   <p className="text-slate-300 text-sm mt-1">
-                    Clientes que fazem apenas corte têm 73% de aceitação para combo. Sugira na recepção!
+                    Pacientes que fizeram limpeza têm alta aceitação para clareamento. Sugira na recepção!
                   </p>
                 </div>
               </div>
