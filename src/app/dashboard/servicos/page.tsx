@@ -386,9 +386,9 @@ export default function ServicosPage() {
                   required
                 >
                   <option value="">Selecione...</option>
-                  <option value="Barbeiro">Profissional</option>
+                  <option value="Dentista">Dentista</option>
                   <option value="Auxiliar">Auxiliar</option>
-                  <option value="Manicure">Manicure</option>
+                  <option value="Higienista">Higienista</option>
                   <option value="Qualquer">Qualquer</option>
                 </select>
               </div>
