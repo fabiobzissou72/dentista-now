@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useState } from 'react'
 import { registrarProfissional } from '@/lib/auth'
@@ -12,25 +12,11 @@ export default function RegisterPage() {
     senha: '',
     confirmarSenha: '',
     telefone: '',
-    especialidades: [] as string[]
   })
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const [success, setSuccess] = useState('')
   const router = useRouter()
-
-  const especialidadesDisponiveis = [
-    'Corte', 'Barba', 'Coloração', 'Tratamentos', 'Estética', 'Acabamento'
-  ]
-
-  const handleEspecialidadeChange = (especialidade: string) => {
-    setFormData(prev => ({
-      ...prev,
-      especialidades: prev.especialidades.includes(especialidade)
-        ? prev.especialidades.filter(e => e !== especialidade)
-        : [...prev.especialidades, especialidade]
-    }))
-  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -44,18 +30,12 @@ export default function RegisterPage() {
       return
     }
 
-    if (formData.especialidades.length === 0) {
-      setError('Selecione pelo menos uma especialidade')
-      setLoading(false)
-      return
-    }
-
     try {
       const resultado = await registrarProfissional(
         {
           nome: formData.nome,
           telefone: formData.telefone,
-          especialidades: formData.especialidades
+          especialidades: []
         },
         {
           email: formData.email,
@@ -139,25 +119,6 @@ export default function RegisterPage() {
                 placeholder="(11) 99999-9999"
                 required
               />
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-slate-300 mb-2">
-                Especialidades
-              </label>
-              <div className="grid grid-cols-2 gap-2">
-                {especialidadesDisponiveis.map((esp) => (
-                  <label key={esp} className="flex items-center space-x-2 text-sm">
-                    <input
-                      type="checkbox"
-                      checked={formData.especialidades.includes(esp)}
-                      onChange={() => handleEspecialidadeChange(esp)}
-                      className="w-4 h-4 text-cyan-600 bg-slate-700 border-slate-600 rounded focus:ring-cyan-500"
-                    />
-                    <span className="text-slate-300">{esp}</span>
-                  </label>
-                ))}
-              </div>
             </div>
 
             <div>
