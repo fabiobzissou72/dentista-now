@@ -1014,26 +1014,28 @@ function ClientesPageContent() {
 
               {/* Preferências de Serviço */}
               <div className="space-y-3 md:space-y-4 border-t border-slate-700 pt-3 md:pt-4">
-                <h3 className="text-base md:text-lg font-semibold text-purple-400">Preferências de Serviço</h3>
+                <h3 className="text-base md:text-lg font-semibold text-purple-400">Preferências de Atendimento</h3>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
                   <div>
-                    <label className="block text-sm text-slate-400 mb-1">Estilo de Cabelo</label>
+                    <label className="block text-sm text-slate-400 mb-1">Condição Dental</label>
                     <input
                       type="text"
                       value={editForm.estilo_cabelo}
                       onChange={(e) => setEditForm({ ...editForm, estilo_cabelo: e.target.value })}
                       className="w-full bg-slate-700/50 border border-slate-600/50 rounded px-3 py-2 text-white"
+                      placeholder="Ex: Usa aparelho, sensibilidade..."
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm text-slate-400 mb-1">Preferências de Corte</label>
+                    <label className="block text-sm text-slate-400 mb-1">Preferências de Tratamento</label>
                     <input
                       type="text"
                       value={editForm.preferencias_corte}
                       onChange={(e) => setEditForm({ ...editForm, preferencias_corte: e.target.value })}
                       className="w-full bg-slate-700/50 border border-slate-600/50 rounded px-3 py-2 text-white"
+                      placeholder="Ex: Anestesia local, sem barulho..."
                     />
                   </div>
 
@@ -1090,7 +1092,7 @@ function ClientesPageContent() {
                       value={editForm.tipo_bebida}
                       onChange={(e) => setEditForm({ ...editForm, tipo_bebida: e.target.value })}
                       className="w-full bg-slate-700/50 border border-slate-600/50 rounded px-3 py-2 text-white"
-                      placeholder="Ex: Café, Whisky, Água..."
+                      placeholder="Ex: Água, Suco, Café..."
                     />
                   </div>
 
@@ -1101,7 +1103,7 @@ function ClientesPageContent() {
                       value={editForm.alergias}
                       onChange={(e) => setEditForm({ ...editForm, alergias: e.target.value })}
                       className="w-full bg-slate-700/50 border border-slate-600/50 rounded px-3 py-2 text-white"
-                      placeholder="Ex: Pomada X, Produto Y..."
+                      placeholder="Ex: Anestésico X, Látex..."
                     />
                   </div>
 
@@ -1112,7 +1114,7 @@ function ClientesPageContent() {
                       value={editForm.tratamento}
                       onChange={(e) => setEditForm({ ...editForm, tratamento: e.target.value })}
                       className="w-full bg-slate-700/50 border border-slate-600/50 rounded px-3 py-2 text-white"
-                      placeholder="Ex: Hidratação, Relaxamento..."
+                      placeholder="Ex: Clareamento, Limpeza..."
                     />
                   </div>
 
@@ -1123,7 +1125,7 @@ function ClientesPageContent() {
                       value={editForm.ultimo_servico}
                       onChange={(e) => setEditForm({ ...editForm, ultimo_servico: e.target.value })}
                       className="w-full bg-slate-700/50 border border-slate-600/50 rounded px-3 py-2 text-white"
-                      placeholder="Ex: Corte + Barba"
+                      placeholder="Ex: Limpeza + Restauração"
                       disabled
                     />
                   </div>
