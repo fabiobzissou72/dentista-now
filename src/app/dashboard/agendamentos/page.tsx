@@ -221,7 +221,7 @@ export default function AgendamentosPage() {
       } else {
         setBarbeiroRodizio(null)
         if (!result.success) {
-          alert(result.message || 'Nenhum barbeiro disponível neste horário')
+          alert(result.message || 'Nenhum profissional disponível neste horário')
         }
       }
     } catch (error) {
@@ -667,7 +667,7 @@ export default function AgendamentosPage() {
       }
 
       alert(`Agendamento criado com sucesso!\n\n` +
-        `Barbeiro: ${result.data.barbeiro_atribuido}\n` +
+        `Profissional: ${result.data.barbeiro_atribuido}\n` +
         `${result.data.mensagem_rodizio || ''}\n` +
         `${result.data.webhook_enviado ? '✅ Notificação enviada!' : ''}`
       )
@@ -1238,7 +1238,7 @@ export default function AgendamentosPage() {
 
                       <div className="space-y-1">
                         <div className="text-xs md:text-sm text-purple-300">
-                          <span>✂️ {agendamento.profissionais?.nome || 'Profissional não definido'}</span>
+                          <span>🦷 {agendamento.profissionais?.nome || 'Profissional não definido'}</span>
                         </div>
                         <div className="flex flex-wrap items-center gap-1 text-xs md:text-sm text-purple-300">
                           <span>📋 Serviços:</span>
@@ -1452,7 +1452,7 @@ export default function AgendamentosPage() {
                         </div>
                         <div>
                           <div className="font-medium text-white">{ag.nome_cliente}</div>
-                          <div className="text-sm text-purple-300">✂️ {ag.profissionais?.nome || 'Não definido'}</div>
+                          <div className="text-sm text-purple-300">🦷 {ag.profissionais?.nome || 'Não definido'}</div>
                           <div className="text-sm text-slate-400">{ag.telefone}</div>
                         </div>
                       </div>
@@ -1506,11 +1506,11 @@ export default function AgendamentosPage() {
                 )}
               </div>
 
-              {/* Barbeiro e Serviços */}
+              {/* Profissional e Serviços */}
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-slate-700/30 rounded-lg p-4">
-                  <div className="text-sm text-slate-400 mb-2">Barbeiro</div>
-                  <div className="text-white font-medium">✂️ {detalhesAgendamento.profissionais?.nome || 'Não definido'}</div>
+                  <div className="text-sm text-slate-400 mb-2">Profissional</div>
+                  <div className="text-white font-medium">🦷 {detalhesAgendamento.profissionais?.nome || 'Não definido'}</div>
                 </div>
                 <div className="bg-slate-700/30 rounded-lg p-4">
                   <div className="text-sm text-slate-400 mb-2">Duração</div>
@@ -1805,7 +1805,7 @@ export default function AgendamentosPage() {
                   )}
                   {horariosDisponiveis.length === 0 && editForm.data_agendamento && editForm.servico_ids.length > 0 && !checkingAvailability && (
                     <p className="text-xs text-yellow-400 mt-1">
-                      ⚠ Nenhum horário disponível. Selecione outra data ou barbeiro.
+                      ⚠ Nenhum horário disponível. Selecione outra data ou profissional.
                     </p>
                   )}
                 </div>
@@ -1821,7 +1821,7 @@ export default function AgendamentosPage() {
                   onChange={(e) => setEditForm({ ...editForm, profissional_id: e.target.value })}
                   className="w-full bg-slate-700/50 border border-slate-600/50 rounded px-3 py-2 text-white [&>option]:bg-slate-700 [&>option]:text-white"
                 >
-                  <option value="" className="bg-slate-700 text-white">🔄 Rodízio Automático (barbeiro com menos atendimentos)</option>
+                  <option value="" className="bg-slate-700 text-white">🔄 Rodízio Automático (profissional com menos atendimentos)</option>
                   {profissionais.map(prof => (
                     <option key={prof.id} value={prof.id} className="bg-slate-700 text-white">{prof.nome}</option>
                   ))}
@@ -1832,7 +1832,7 @@ export default function AgendamentosPage() {
                   <div className="mt-2 bg-purple-700/30 border border-purple-600/50 rounded-lg p-3">
                     <div className="flex items-center space-x-2 text-sm">
                       <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                      <span className="text-white font-medium">Barbeiro do Rodízio:</span>
+                      <span className="text-white font-medium">Profissional do Rodízio:</span>
                       <span className="text-purple-200">{barbeiroRodizio.nome}</span>
                     </div>
                     <div className="text-xs text-purple-300 mt-1">
@@ -1843,7 +1843,7 @@ export default function AgendamentosPage() {
 
                 {!editForm.profissional_id && !barbeiroRodizio && editForm.hora_inicio && (
                   <div className="mt-2 text-xs text-slate-400">
-                    ℹ️ Selecione data, hora e serviços para ver qual barbeiro será atribuído
+                    ℹ️ Selecione data, hora e serviços para ver qual profissional será atribuído
                   </div>
                 )}
               </div>

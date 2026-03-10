@@ -561,7 +561,7 @@ export default function ConfiguracoesPage() {
               />
             </div>
             <div>
-              <label className="block text-sm text-purple-300 mb-1">Comissão Barbeiro (%)</label>
+              <label className="block text-sm text-purple-300 mb-1">Comissão Profissional (%)</label>
               <input
                 type="number"
                 min="0"
@@ -875,15 +875,15 @@ export default function ConfiguracoesPage() {
         </CardContent>
       </Card>
 
-      {/* Webhooks por Barbeiro */}
+      {/* Webhooks por Profissional */}
       <Card className="bg-brand border-brand opacity-90">
         <CardHeader>
           <CardTitle className="text-white flex items-center space-x-2">
             <Bell className="w-5 h-5 text-purple-400" />
-            <span>Webhooks Personalizados por Barbeiro</span>
+            <span>Webhooks Personalizados por Profissional</span>
           </CardTitle>
           <p className="text-sm text-purple-300 mt-1">
-            Configure webhooks individuais para cada barbeiro receber notificações de seus próprios agendamentos
+            Configure webhooks individuais para cada profissional receber notificações de seus próprios agendamentos
           </p>
         </CardHeader>
         <CardContent>
@@ -922,7 +922,7 @@ export default function ConfiguracoesPage() {
                           type="url"
                           value={webhookTemp.url}
                           onChange={(e) => setWebhookTemp({ ...webhookTemp, url: e.target.value })}
-                          placeholder="https://seu-n8n.com/webhook/barbeiro-notif"
+                          placeholder="https://seu-n8n.com/webhook/profissional-notif"
                           className="w-full px-3 py-2 bg-slate-700 border border-purple-600/50 rounded text-white text-sm"
                         />
                       </div>
@@ -995,7 +995,7 @@ export default function ConfiguracoesPage() {
             {barbeiros.length === 0 && (
               <div className="text-center py-8 text-purple-300">
                 <Users className="w-12 h-12 mx-auto mb-4 opacity-50" />
-                <p>Nenhum barbeiro cadastrado</p>
+                <p>Nenhum profissional cadastrado</p>
               </div>
             )}
           </div>
@@ -1006,10 +1006,10 @@ export default function ConfiguracoesPage() {
               <div className="flex-1">
                 <div className="text-blue-300 font-medium mb-1">Como Funciona</div>
                 <ul className="text-sm text-blue-200 space-y-1">
-                  <li>• Cada barbeiro pode ter seu próprio webhook personalizado</li>
-                  <li>• Webhooks são disparados apenas para agendamentos daquele barbeiro</li>
+                  <li>• Cada profissional pode ter seu próprio webhook personalizado</li>
+                  <li>• Webhooks são disparados apenas para agendamentos daquele profissional</li>
                   <li>• Configure no N8N para enviar notificações WhatsApp individuais</li>
-                  <li>• Escolha quais eventos cada barbeiro quer receber</li>
+                  <li>• Escolha quais eventos cada profissional quer receber</li>
                 </ul>
               </div>
             </div>

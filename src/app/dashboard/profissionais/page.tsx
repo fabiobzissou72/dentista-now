@@ -442,12 +442,12 @@ export default function ProfissionaisPage() {
   }
 
   const getEspecialidadeIcon = (especialidade: string | null | undefined) => {
-    if (!especialidade || typeof especialidade !== 'string') return '✂️'
+    if (!especialidade || typeof especialidade !== 'string') return '🦷'
     const esp = especialidade.toLowerCase()
     if (esp.includes('barba')) return '🧔'
-    if (esp.includes('corte')) return '✂️'
+    if (esp.includes('corte')) return '🦷'
     if (esp.includes('coloração')) return '🎨'
-    return '💈'
+    return '🦷'
   }
 
   if (loading) {
@@ -733,11 +733,11 @@ export default function ProfissionaisPage() {
                       className="flex-1 bg-slate-700/50 border border-slate-600/50 rounded px-3 py-2 text-white"
                     >
                       <option value="">Selecione...</option>
-                      <option value="Barbeiro">Barbeiro</option>
-                      <option value="Barbeiro Especialista em Barba">Barbeiro Especialista em Barba</option>
-                      <option value="Barbeiro Especialista em Corte">Barbeiro Especialista em Corte</option>
-                      <option value="Barbeiro e Coloração">Barbeiro e Coloração</option>
-                      <option value="Barbeiro Master">Barbeiro Master</option>
+                      <option value="Profissional">Profissional</option>
+                      <option value="Profissional Especialista em Implante">Profissional Especialista em Implante</option>
+                      <option value="Profissional Especialista em Ortodontia">Profissional Especialista em Ortodontia</option>
+                      <option value="Profissional e Estética Dental">Profissional e Estética Dental</option>
+                      <option value="Profissional Master">Profissional Master</option>
                     </select>
                   ) : (
                     <div className="flex-1">
@@ -745,7 +745,7 @@ export default function ProfissionaisPage() {
                         type="text"
                         value={novaEspecialidade}
                         onChange={(e) => setNovaEspecialidade(e.target.value)}
-                        placeholder="Ex: Barbeiro Especialista em Design de Sobrancelhas"
+                        placeholder="Ex: Profissional Especialista em Estética Dental"
                         className="w-full bg-slate-700/50 border border-slate-600/50 rounded px-3 py-2 text-white"
                       />
                     </div>

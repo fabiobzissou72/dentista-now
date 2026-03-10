@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import { supabase } from '@/lib/supabase'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Scissors, Plus, Edit, Trash2, Clock, DollarSign, User } from 'lucide-react'
+import { Stethoscope, Plus, Edit, Trash2, Clock, DollarSign, User } from 'lucide-react'
 import { formatCurrency } from '@/lib/utils'
 
 interface Servico {
@@ -146,7 +146,7 @@ export default function ServicosPage() {
       case 'tratamento': return '💆‍♂️'
       case 'estética': return '✨'
       case 'depilação': return '🪒'
-      case 'acabamento': return '✂️'
+      case 'acabamento': return '🦷'
       case 'finalização': return '🎯'
       default: return '⭐'
     }
@@ -384,7 +384,7 @@ export default function ServicosPage() {
                   required
                 >
                   <option value="">Selecione...</option>
-                  <option value="Barbeiro">Barbeiro</option>
+                  <option value="Barbeiro">Profissional</option>
                   <option value="Auxiliar">Auxiliar</option>
                   <option value="Manicure">Manicure</option>
                   <option value="Qualquer">Qualquer</option>
@@ -418,7 +418,7 @@ export default function ServicosPage() {
         <Card className="bg-purple-800/30 border-purple-700/50">
           <CardContent className="p-4">
             <div className="flex items-center space-x-2">
-              <Scissors className="w-5 h-5 text-purple-400" />
+              <Stethoscope className="w-5 h-5 text-purple-400" />
               <div>
                 <div className="text-lg font-bold text-white">{servicos.length}</div>
                 <div className="text-sm text-purple-300">Total Serviços</div>

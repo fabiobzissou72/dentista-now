@@ -5,7 +5,7 @@ import { useRouter, usePathname } from 'next/navigation'
 import { supabase } from '@/lib/supabase'
 import {
   Calendar, Users, TrendingUp, DollarSign, Clock, Award, Settings,
-  Search, User, BarChart3, PieChart, Home, UserCheck, Scissors,
+  Search, User, BarChart3, PieChart, Home, UserCheck, Stethoscope,
   ShoppingBag, FileText, LogOut, Menu, Package, Gift
 } from 'lucide-react'
 
@@ -87,7 +87,7 @@ export default function DashboardLayout({
     { id: 'dashboard', label: 'Visão Geral', icon: Home, path: '/dashboard' },
     { id: 'agendamentos', label: 'Agendamentos', icon: Calendar, path: '/dashboard/agendamentos' },
     { id: 'clientes', label: 'Clientes', icon: Users, path: '/dashboard/clientes' },
-    { id: 'servicos', label: 'Serviços', icon: Scissors, path: '/dashboard/servicos' },
+    { id: 'servicos', label: 'Serviços', icon: Stethoscope, path: '/dashboard/servicos' },
     { id: 'produtos', label: 'Produtos', icon: Package, path: '/dashboard/produtos' },
     { id: 'planos', label: 'Planos', icon: Gift, path: '/dashboard/planos' },
     { id: 'profissionais', label: 'Profissionais', icon: UserCheck, path: '/dashboard/profissionais' },

@@ -212,7 +212,7 @@ export default function RelatoriosPage() {
   const faturamentoVendas = data.vendas.reduce((sum, v) => sum + (v.valor_total || 0), 0)
   const faturamentoTotal = faturamentoAgendamentos + faturamentoVendas
 
-  // Ranking de barbeiros - APENAS agendamentos onde cliente compareceu
+  // Ranking de profissionais - APENAS agendamentos onde cliente compareceu
   const rankingBarbeiros = data.profissionais.map(prof => {
     const agendamentosProfissional = agendamentosComparecidos.filter(a => a.profissional_id === prof.id)
     const vendasProfissional = data.vendas.filter(v => v.profissional_id === prof.id)
@@ -307,7 +307,7 @@ export default function RelatoriosPage() {
       ['Agendamentos', totalAgendamentos],
       ['Vendas', totalVendas],
       [''],
-      ['Ranking Barbeiros'],
+      ['Ranking Profissionais'],
       ['Nome', 'Faturamento', 'Atendimentos', 'Vendas'],
       ...rankingBarbeiros.map(b => [b.nome, b.faturamento, b.atendimentos, b.vendas])
     ].map(row => row.join(',')).join('\n')
@@ -473,12 +473,12 @@ export default function RelatoriosPage() {
         </Card>
       </div>
 
-      {/* Ranking de Barbeiros - O Rei da Tesoura 👑 */}
+      {/* Ranking de Profissionais 👑 */}
       <Card className="bg-gradient-to-r from-yellow-800/30 to-orange-800/30 border-yellow-600/50">
         <CardHeader>
           <CardTitle className="text-white flex items-center space-x-2">
             <Trophy className="w-6 h-6 text-yellow-400" />
-            <span>👑 Ranking dos Barbeiros - Os Reis da Tesoura</span>
+            <span>👑 Ranking dos Profissionais</span>
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -702,7 +702,7 @@ export default function RelatoriosPage() {
                             ? 'bg-blue-500/20 text-blue-400'
                             : 'bg-purple-500/20 text-purple-400'
                         }`}>
-                          {mov.tipo === 'servico' ? '✂️ Serviço' : '📦 Produto'}
+                          {mov.tipo === 'servico' ? '🦷 Serviço' : '📦 Produto'}
                         </span>
                       </td>
                       <td className="p-3 text-white">{mov.cliente_nome || '-'}</td>
@@ -757,7 +757,7 @@ export default function RelatoriosPage() {
                   <tr>
                     <th className="text-left p-3 text-purple-300">Data</th>
                     <th className="text-left p-3 text-purple-300">Cliente</th>
-                    <th className="text-left p-3 text-purple-300">Barbeiro</th>
+                    <th className="text-left p-3 text-purple-300">Profissional</th>
                     <th className="text-left p-3 text-purple-300">Serviços</th>
                     <th className="text-right p-3 text-purple-300">Valor</th>
                   </tr>
@@ -778,7 +778,7 @@ export default function RelatoriosPage() {
                       <tr key={agendamento.id} className="border-b border-purple-700/30 hover:bg-purple-700/20">
                         <td className="p-3 text-white">{agendamento.data_agendamento}</td>
                         <td className="p-3 text-white">{agendamento.nome_cliente}</td>
-                        <td className="p-3 text-purple-300">{barbeiro?.nome || agendamento.Barbeiro || '-'}</td>
+                        <td className="p-3 text-purple-300">{barbeiro?.nome || agendamento.Profissional || '-'}</td>
                         <td className="p-3 text-purple-200">
                           {servicosAgendamento.length > 0 ? (
                             <div className="flex flex-wrap gap-1">

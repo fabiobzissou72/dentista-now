@@ -628,7 +628,7 @@ function ClientesPageContent() {
                 }}
                 className="px-4 py-2 bg-slate-700/50 border border-slate-600/50 rounded-lg text-white text-sm md:text-base"
               >
-                <option value="">Todos os Barbeiros</option>
+                <option value="">Todos os Profissionais</option>
                 {profissionais.map(prof => (
                   <option key={prof.id} value={prof.nome}>{prof.nome}</option>
                 ))}
@@ -747,7 +747,7 @@ function ClientesPageContent() {
 
                       {cliente.profissional_preferido && (
                         <div className="mt-1 text-sm text-purple-300">
-                          ✂️ Preferência: {cliente.profissional_preferido}
+                          🦷 Preferência: {cliente.profissional_preferido}
                         </div>
                       )}
 
@@ -1038,7 +1038,7 @@ function ClientesPageContent() {
                   </div>
 
                   <div>
-                    <label className="block text-sm text-slate-400 mb-1">Barbeiro Preferido</label>
+                    <label className="block text-sm text-slate-400 mb-1">Profissional Preferido</label>
                     <select
                       value={editForm.profissional_preferido}
                       onChange={(e) => setEditForm({ ...editForm, profissional_preferido: e.target.value })}
