@@ -161,11 +161,12 @@ export default function ProdutosPage() {
 
   const getCategoriaIcon = (categoria: string) => {
     switch (categoria?.toLowerCase()) {
-      case 'finalização': return '🎯'
-      case 'modelador': return '🎨'
-      case 'hidratação': return '💧'
-      case 'fixador': return '🔒'
+      case 'higiene': return '🪥'
+      case 'anestésico': return '💉'
+      case 'material': return '🦷'
       case 'ferramenta': return '🛠️'
+      case 'proteção': return '🧤'
+      case 'medicamento': return '💊'
       default: return '📦'
     }
   }
@@ -377,11 +378,12 @@ export default function ProdutosPage() {
                     className="w-full bg-slate-700/50 border border-slate-600/50 rounded px-3 py-2 text-white"
                   >
                     <option value="">Selecione...</option>
-                    <option value="Finalização">Finalização</option>
-                    <option value="Modelador">Modelador</option>
-                    <option value="Hidratação">Hidratação</option>
-                    <option value="Fixador">Fixador</option>
+                    <option value="Higiene">Higiene</option>
+                    <option value="Anestésico">Anestésico</option>
+                    <option value="Material">Material</option>
                     <option value="Ferramenta">Ferramenta</option>
+                    <option value="Proteção">Proteção</option>
+                    <option value="Medicamento">Medicamento</option>
                   </select>
                 </div>
               </div>
@@ -392,7 +394,7 @@ export default function ProdutosPage() {
                   type="text"
                   value={editForm.funcao}
                   onChange={(e) => setEditForm({ ...editForm, funcao: e.target.value })}
-                  placeholder="Ex: Modelar e fixar cabelo"
+                  placeholder="Ex: Anestesia local, antisséptico..."
                   className="w-full bg-slate-700/50 border border-slate-600/50 rounded px-3 py-2 text-white"
                 />
               </div>

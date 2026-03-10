@@ -140,14 +140,15 @@ export default function ServicosPage() {
 
   const getCategoriaIcon = (categoria: string) => {
     switch (categoria?.toLowerCase()) {
-      case 'cabelo': return '💇‍♂️'
-      case 'barba': return '🧔'
-      case 'coloração': return '🎨'
-      case 'tratamento': return '💆‍♂️'
+      case 'clínico geral': return '🦷'
+      case 'ortodontia': return '😁'
+      case 'endodontia': return '🔬'
+      case 'periodontia': return '🩺'
+      case 'implante': return '⚙️'
       case 'estética': return '✨'
-      case 'depilação': return '🪒'
-      case 'acabamento': return '🦷'
-      case 'finalização': return '🎯'
+      case 'cirurgia': return '🏥'
+      case 'odontopediatria': return '👶'
+      case 'limpeza': return '🪥'
       default: return '⭐'
     }
   }
@@ -364,14 +365,15 @@ export default function ServicosPage() {
                   required
                 >
                   <option value="">Selecione...</option>
-                  <option value="Cabelo">Cabelo</option>
-                  <option value="Barba">Barba</option>
-                  <option value="Coloração">Coloração</option>
-                  <option value="Tratamento">Tratamento</option>
+                  <option value="Clínico Geral">Clínico Geral</option>
+                  <option value="Ortodontia">Ortodontia</option>
+                  <option value="Endodontia">Endodontia</option>
+                  <option value="Periodontia">Periodontia</option>
+                  <option value="Implante">Implante</option>
                   <option value="Estética">Estética</option>
-                  <option value="Depilação">Depilação</option>
-                  <option value="Acabamento">Acabamento</option>
-                  <option value="Finalização">Finalização</option>
+                  <option value="Cirurgia">Cirurgia</option>
+                  <option value="Odontopediatria">Odontopediatria</option>
+                  <option value="Limpeza">Limpeza</option>
                 </select>
               </div>
 

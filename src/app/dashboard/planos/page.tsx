@@ -226,13 +226,13 @@ export default function PlanosPage() {
   }
 
   const getPlanoIcon = (nome: string) => {
-    if (nome.toLowerCase().includes('corte') && nome.toLowerCase().includes('barba')) return '👑'
-    if (nome.toLowerCase().includes('hidrata')) return '💧'
-    if (nome.toLowerCase().includes('barba')) return '🧔'
-    if (nome.toLowerCase().includes('corte')) return '✂️'
-    if (nome.toLowerCase().includes('sobrancelha')) return '👁️'
-    if (nome.toLowerCase().includes('barboterapia')) return '💆‍♂️'
-    return '📦'
+    if (nome.toLowerCase().includes('clareamento')) return '✨'
+    if (nome.toLowerCase().includes('implante')) return '⚙️'
+    if (nome.toLowerCase().includes('ortodon')) return '😁'
+    if (nome.toLowerCase().includes('limpeza')) return '🪥'
+    if (nome.toLowerCase().includes('cirurg')) return '🏥'
+    if (nome.toLowerCase().includes('infantil') || nome.toLowerCase().includes('kids')) return '👶'
+    return '🦷'
   }
 
   if (loading) {
@@ -440,7 +440,7 @@ export default function PlanosPage() {
                   type="text"
                   value={editForm.nome}
                   onChange={(e) => setEditForm({ ...editForm, nome: e.target.value })}
-                  placeholder="Ex: Corte + Barba Premium"
+                  placeholder="Ex: Limpeza + Clareamento Premium"
                   className="w-full bg-slate-700/50 border border-slate-600/50 rounded px-3 py-2 text-white"
                 />
               </div>
@@ -450,7 +450,7 @@ export default function PlanosPage() {
                 <textarea
                   value={editForm.itens_inclusos}
                   onChange={(e) => setEditForm({ ...editForm, itens_inclusos: e.target.value })}
-                  placeholder="Ex: Corte, Barba, Hidratação, Sobrancelha"
+                  placeholder="Ex: Limpeza, Clareamento, Restauração"
                   className="w-full bg-slate-700/50 border border-slate-600/50 rounded px-3 py-2 text-white h-20"
                 />
               </div>
